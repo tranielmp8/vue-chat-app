@@ -51,6 +51,8 @@ import { timestamp } from '../firebase/config';
     border: 0;
     border-radius: 20px;
     font-family: inherit;
+    font-size: 20px;
+    color: #fff;
     outline: none;
     background-color: #777;
   }

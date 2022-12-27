@@ -64,8 +64,14 @@ export default {
     border-radius: 20px;
     border: 1px solid #eee;
     outline: none;
-    color: #999;
+    color: #222;
     margin: 10px auto;
+    font-weight: bold;
+  }
+
+  .welcome input::placeholder{
+    color: #333;
+    font-weight: bold;
   }
   .welcome span{
     font-weight: bold;

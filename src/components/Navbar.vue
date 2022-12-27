@@ -5,7 +5,11 @@
         <span>
           {{ user.displayName.toUpperCase() }}
         </span>  </p>
-      <p class="email" >Currently logged in as {{ user.email }}</p>
+      <p class="email" >Currently logged in as: 
+        <span class="span-email">
+          {{ user.email }}
+        </span>
+      </p>
     </div>
     <button @click="handleClick">Logout</button>
   </nav>
@@ -57,5 +61,13 @@ nav {
     font-size: 14px;
     color: #fff;
   }
+
+  .span-email {
+    color: #ed7138;
+    font-size: 18px;
+    text-decoration: underline;
+  }
+
+
 
 </style>
