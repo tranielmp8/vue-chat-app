@@ -4,7 +4,7 @@
     <div v-if="formattedDocuments" ref="messages" class="messages">
       <div v-for="doc in formattedDocuments" :key="doc.id" class="single">
         <span class="created-at">{{ doc.createdAt }}</span>
-        <span class="name">{{ doc.name }}</span>
+        <span class="name">{{ doc.name.toUpperCase() }}:</span>
         <span class="message">{{ doc.message }}</span>
       </div>
     </div>
@@ -39,24 +39,32 @@ export default {
 
 <style scoped>
   .chat-window {
-    background: #fafafa;
+    background: #000;
     padding: 30px 20px;
   }
   .single {
     margin: 18px 0;
+
   }
   .created-at {
     display: block;
     color: #999;
-    font-size: 12px;
+    font-size: 14px;
     margin-bottom: 4px;
   }
   .name {
     font-weight: bold;
     margin-right: 6px;
+    color: #9b2230;
+    font-size: 20px;
+  }
+
+  .message {
+    font-size: 18px;
   }
   .messages {
     max-height: 400px;
     overflow: auto;
+    color: #fff;
   }
 </style>

@@ -52,10 +52,18 @@ import { timestamp } from '../firebase/config';
     border-radius: 20px;
     font-family: inherit;
     outline: none;
+    background-color: #777;
   }
+
+  textarea::placeholder{
+    color: #fff;
+    font-size: 18px;
+ 
+  }
+
   .error {
     text-align: center;
-    color: #ff2a58;
+    color: crimson;
     font-size: 12px;
     padding: 10px 0;
   }

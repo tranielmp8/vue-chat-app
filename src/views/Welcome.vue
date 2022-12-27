@@ -2,12 +2,12 @@
   <div class="welcome container" >
     <h2>Welcome</h2> 
     <div v-if="showLogin" >
-      <h2>Login</h2>
+      <h2 class="h2-title">Login</h2>
       <Login @login="enterChat" />  
       <p>No account yet? <span @click="showLogin = false" >SignUp</span></p>
     </div> 
     <div v-else >
-      <h2>Sign Up</h2>
+      <h2 class="h2-title">Sign Up</h2>
       <SignupForm @signup="enterChat" />
       <p>Already Registered? <span @click="showLogin = true" >Login</span></p>
     </div>
@@ -43,6 +43,10 @@ export default {
 .welcome{
   text-align: center;
   padding: 20px 0;
+  color: #eee;
+}
+.h2-title {
+  color: #ed7138;
 }
 
  /* form styles */

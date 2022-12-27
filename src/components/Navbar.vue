@@ -1,7 +1,10 @@
 <template>
   <nav v-if="user">
     <div>
-      <p>Hey there {{ user.displayName }}</p>
+      <p class="display">Hey there 
+        <span>
+          {{ user.displayName.toUpperCase() }}
+        </span>  </p>
       <p class="email" >Currently logged in as {{ user.email }}</p>
     </div>
     <button @click="handleClick">Logout</button>
@@ -38,14 +41,21 @@ nav {
     justify-content: space-between;
     align-items: center;
   }
+
+  span{
+    color: #ed7138;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
   nav p {
     margin: 2px auto;
     font-size: 16px;
-    color: #444;
+    color: #fff;
   }
   nav p.email {
     font-size: 14px;
-    color: #999;
+    color: #fff;
   }
 
 </style>
