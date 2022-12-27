@@ -1,5 +1,5 @@
 <template>
-   <div class="chat-window">
+  <div class="chat-window">
     <div v-if="error">{{ error }}</div>
     <div v-if="formattedDocuments" ref="messages" class="messages">
       <div v-for="doc in formattedDocuments" :key="doc.id" class="single">
@@ -13,14 +13,14 @@
 
 <script>
 import getCollection from '../composables/getCollection'
-import { ref, computed, onUpdated } from 'vue'
-  export default {
-    setup(){
-      const { error, documents } = getCollection('messages')
+import { computed, onUpdated, ref } from 'vue'
+import { formatDistanceToNow } from 'date-fns'
+export default {
+  setup() {
+    const { error, documents } = getCollection('messages')
     // format timestamp
     const formattedDocuments = computed(() => {
       if (documents.value) {
-        
         return documents.value.map(doc => {
           let time = formatDistanceToNow(doc.createdAt.toDate())
           return { ...doc, createdAt: time }
@@ -34,12 +34,11 @@ import { ref, computed, onUpdated } from 'vue'
     })
     return { error, documents, formattedDocuments, messages }
   }
-    
-  }
+}
 </script>
 
 <style scoped>
-.chat-window {
+  .chat-window {
     background: #fafafa;
     padding: 30px 20px;
   }

@@ -24,7 +24,7 @@ import { timestamp } from '../firebase/config';
         const chat = {
           name: user.value.displayName,
           message: message.value,
-          createAt: timestamp()
+          createdAt: timestamp()
 
         }
         await addDoc(chat)

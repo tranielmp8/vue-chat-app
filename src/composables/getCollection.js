@@ -9,6 +9,8 @@ const getCollection = (collection) => {
   // register the firestore collection reference
   let collectionRef = projectFirestore.collection(collection)
     .orderBy('createdAt')
+    console.log(collectionRef)
+
 
   const unsub = collectionRef.onSnapshot(snap => {
     console.log(snap)
